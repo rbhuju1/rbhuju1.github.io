@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Geolocation</title>
+
+  </head>
+
+<body> 
+<h1> Welcome To Quakertown!</h1>
+<link rel="stylesheet" href="main.css">
+
+<button onclick="getLocation()">Lets Start</button>
+
+<p id="demo"></p>
+
+<script>
+  var x = document.getElementById("demo");
+  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+
+    //Coordinates at the MCL for testing
+/*    if (position.coords.latitude > 33.22500 && position.coords.latitude < 33.22600 &&
+        position.coords.longitude < -97.1269100 && position.coords.longitude > -97.1269500) { //copy and paste this for other coords
+          window.open("https://www.google.com") //change this later to POI pages
+        }
+*/
+//POI Coordinates and redirects
+    if (position.coords.latitude > 32.8747983 && position.coords.latitude < 32.8748183 &&
+        position.coords.longitude < -97.3408541 && position.coords.longitude > -97.3408741){
+          window.open("https://cristalwithani.github.io/dr.-moten.html")
+        }
+    if (position.coords.latitude > 33.22000 && position.coords.latitude < 33.22100 &&
+        position.coords.longitude < -97.12800 && position.coords.longitude > -97.12900){
+          window.open("https://cristalwithani.github.io/angeline-burr.html")
+        }
+    if (position.coords.latitude > 33.22000 && position.coords.latitude < 33.22100 &&
+        position.coords.longitude < -97.12700 && position.coords.longitude > -97.12800){
+          window.open("https://cristalwithani.github.io/dr.-moten.html")
+        }
+    if (position.coords.latitude > 33.21900 && position.coords.latitude < 33.22000 &&
+        position.coords.longitude < -97.12900 && position.coords.longitude > -97.13000){
+          window.open("https://cristalwithani.github.io/crawfords.html")
+        }
+    if (position.coords.latitude > 33.21800 && position.coords.latitude < 33.21900 &&
+        position.coords.longitude < -97.13000 && position.coords.longitude > -97.13100){
+          window.open("https://cristalwithani.github.io/will-and-ida-hill.html")
+        }
+
+    else { alert("Move to Next point to see who use to live there") }
+  
+  }
+
+</script>
+
+</body>
+</html>
